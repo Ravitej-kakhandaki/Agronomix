@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Add this script tag to your head or before your closing body tag -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <!-- Add this inside your body where you want the chart to appear -->
+<canvas id="priceChart" width="400" height="200"></canvas>
+<!-- Add this script after the canvas element -->
+<script>
+    // Sample data for the chart
+    const cropData = {
+        labels: ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022","2023"],
+        datasets: [
+            {
+                label: "Wheat",
+                borderColor: "rgb(255, 99, 132)",
+                data: [75.3, 79.1, 78.2, 109.3,99.4 , 96.2, 136.3, 158.7, 167.2, 163.8,171.8],
+            },
+            // Add datasets for other crops and fruits similarly
+        ],
+    };
+
+    // Get the canvas element
+    const ctx = document.getElementById("priceChart").getContext("2d");
+
+    // Create the chart
+    const myChart = new Chart(ctx, {
+            type: "line",
+            data: cropData,
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: ' Financial Year'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Price (RS) per Quintal'
+                        }
+                    },
+                },
+            },
+        });
+</script>
+
+    
+</body>
+</html>

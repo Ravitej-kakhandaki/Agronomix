@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Information</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #702734;
+            color: #333;
+            margin: 0;
+            padding-bottom: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #d16429;
+            text-align: center;
+            padding: 20px;
+             font-size: 75px;
+             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin: 0;
+            transition: background-color 0.5s;
+        }
+
+        form {
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        section {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #4a90e2;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .remove-button {
+            background-color: #ff5050;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        #submit{
+            background-color: #fff;
+            font-weight: 200;
+            transition: background-color 0.6s;
+        }
+        #submit:hover{
+            background-color: #4a90e2;
+            color: #fff;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Farmer Information</h1>
+
+    <form action="#" method="post" id="farmerForm">
+
+        <!-- Farmer Information Section -->
+        <section id="farmer-info">
+            <h2>Farmer Details</h2>
+            <div id="farmerFields">
+                <div class="farmer-row">
+                    <label for="farmer_name">Name:</label>
+                    <input type="text" name="farmer_name[]" placeholder="Enter farmer name">
+
+                    <label for="contact_info">Contact Info:</label>
+                    <input type="text" name="contact_info[]" placeholder="Enter contact info">
+
+                    <label for="location">Location:</label>
+                    <input type="text" name="location[]" placeholder="Enter location">
+
+                    <label for="email">Email:</label>
+                    <input type="email" name="email[]" placeholder="Enter email">
+                    <button type="button" class="remove-button" onclick="removeRow(this)">Remove</button>
+                </div>
+            </div>
+            <button type="button" onclick="addRow('farmerFields')">Add Farmer</button>
+        </section>
+
+        <!-- Crop Information Section -->
+        <section id="crop-info">
+            <h2>Crops Information</h2>
+            <div id="cropFields">
+                <div class="crop-row">
+                    <label for="crop_name">Crop Name:</label>
+                    <input type="text" name="crop_name[]" placeholder="Enter crop name">
+
+                    <label for="crop_type">Crop Type:</label>
+                    <input type="text" name="crop_type[]" placeholder="Enter crop type">
+
+                    <label for="soil_requirement">Soil Requirement:</label>
+                    <input type="text" name="soil_requirement[]" placeholder="Enter soil requirement">
+
+                    <label for="ideal_temperature">Ideal Temperature:</label>
+                    <input type="text" name="ideal_temperature[]" placeholder="Enter ideal temperature">
+
+                    <label for="ideal_humidity">Ideal Humidity:</label>
+                    <input type="text" name="ideal_humidity[]" placeholder="Enter ideal humidity">
+                    <button type="button" class="remove-button" onclick="removeRow(this)">Remove</button>
+                </div>
+            </div>
+            <button type="button" onclick="addRow('cropFields')">Add Crop</button>
+        </section>
+
+        <!-- Field Information Section -->
+        <section id="field-info">
+            <h2>Field Information</h2>
+            <div id="fieldFields">
+                <div class="field-row">
+                    <label for="field_size">Field Size:</label>
+                    <input type="text" name="field_size[]" placeholder="Enter field size">
+
+                    <label for="soil_condition">Soil Condition:</label>
+                    <input type="text" name="soil_condition[]" placeholder="Enter soil condition">
+
+                    <label for="field_name">Field Name:</label>
+                    <input type="text" name="field_name[]" placeholder="Enter field name">
+
+                    <label for="planting_date">Planting Date:</label>
+                    <input type="date" name="planting_date[]">
+                    <button type="button" class="remove-button" onclick="removeRow(this)">Remove</button>
+                </div>
+            </div>
+            <button type="button" onclick="addRow('fieldFields')">Add Field</button>
+        </section>
+
+        <!-- Harvest Records Section -->
+        <section id="harvest-info">
+            <h2>Harvest Records</h2>
+            <div id="harvestFields">
+                <div class="harvest-row">
+                    <label for="harvest_date">Harvest Date:</label>
+                    <input type="date" name="harvest_date[]">
+
+                    <label for="quantity_harvested">Quantity Harvested:</label>
+                    <input type="text" name="quantity_harvested[]" placeholder="Enter quantity harvested">
+                    <button type="button" class="remove-button" onclick="removeRow(this)">Remove</button>
+                </div>
+            </div>
+            <button type="button" onclick="addRow('harvestFields')">Add Harvest Record</button>
+        </section>
+
+        <!-- Pesticides Applied Section -->
+        <section id="pesticides-info">
+            <h2>Pesticides Applied</h2>
+            <div id="pesticidesFields">
+                <div class="pesticides-row">
+                    <label for="pesticide_name">Pesticide Name:</label>
+                    <input type="text" name="pesticide_name[]" placeholder="Enter pesticide name">
+
+                    <label for="application_date">Application Date:</label>
+                    <input type="date" name="application_date[]">
+
+                    <label for="quantity_used">Quantity Used:</label>
+                    <input type="text" name="quantity_used[]" placeholder="Enter quantity used">
+                    <button type="button" class="remove-button" onclick="removeRow(this)">Remove</button>
+                </div>
+            </div>
+            <button type="button" onclick="addRow('pesticidesFields')">Add Pesticide Application</button>
+        </section>
+
+        <!-- Irrigation Section -->
+        <section id="irrigation-info">
+            <h2>Irrigation</h2>
+            <div id="irrigationFields">
+                <div class="irrigation-row">
+                    <label for="irrigation_date">Date of Irrigation:</label>
+                    <input type="date" name="irrigation_date[]">
+
+                    <label for="irrigation_type">Type:</label>
+                    <input type="text" name="irrigation_type[]" placeholder="Enter irrigation type">
+
+                    <label for="irrigation_duration">Duration:</label>
+                    <input type="text" name="irrigation_duration[]" placeholder="Enter irrigation duration">
+                    <button type="button" class="remove-button" onclick="removeRow(this)">Remove</button>
+                </div>
+            </div>
+            <button type="button" onclick="addRow('irrigationFields')">Add Irrigation Record</button>
+        </section>
+
+        <!-- Crop Diseases Section -->
+        <section id="disease-info">
+            <h2>Crop Diseases</h2>
+            <div id="diseaseFields">
+                <div class="disease-row">
+                    <label for="disease_name">Disease Name:</label>
+                    <input type="text" name="disease_name[]" placeholder="Enter disease name">
+
+                    <label for="detection_date">Detection Date:</label>
+                    <input type="date" name="detection_date[]">
+
+                    <label for="treatment_applied">Treatment Applied:</label>
+                    <input type="text" name="treatment_applied[]" placeholder="Enter treatment applied">
+
+                    <label for="treatment_date">Treatment Date:</label>
+                    <input type="date" name="treatment_date[]">
+                    <button type="button" class="remove-button" onclick="removeRow(this)">Remove</button>
+                </div>
+            </div>
+            <button type="button" onclick="addRow('diseaseFields')">Add Disease Record</button>
+        </section>
+
+        <!-- Soil Test Section -->
+        <section id="soil-test-info">
+            <h2>Soil Test</h2>
+            <div id="soilTestFields">
+                <div class="soil-test-row">
+                    <label for="test_date">Test Date:</label>
+                    <input type="date" name="test_date[]">
+
+                    <label for="soil_pH">Soil pH:</label>
+                    <input type="text" name="soil_pH[]" placeholder="Enter soil pH">
+
+                    <label for="nutrient_levels">Nutrient Levels:</label>
+                    <input type="text" name="nutrient_levels[]" placeholder="Enter nutrient levels">
+
+                    <label for="recommended_fertilizers">Recommended Fertilizers:</label>
+                    <input type="text" name="recommended_fertilizers[]" placeholder="Enter recommended fertilizers">
+                    <button type="button" class="remove-button" onclick="removeRow(this)">Remove</button>
+                </div>
+            </div>
+            <button type="button" onclick="addRow('soilTestFields')">Add Soil Test Record</button>
+        </section>
+
+        <!-- Crop Quality Section -->
+        <section id="quality-info">
+            <h2>Crop Quality</h2>
+            <div id="qualityFields">
+                <div class="quality-row">
+                    <label for="sample_date">Sample Date:</label>
+                    <input type="date" name="sample_date[]">
+
+                    <label for="quality_rating">Quality Rating:</label>
+                    <input type="text" name="quality_rating[]" placeholder="Enter quality rating">
+
+                    <label for="weather_conditions">Weather Conditions:</label>
+                    <input type="text" name="weather_conditions[]" placeholder="Enter weather conditions">
+                    <button type="button" class="remove-button" onclick="removeRow(this)">Remove</button>
+                </div>
+            </div>
+            <button type="button" onclick="addRow('qualityFields')">Add Quality Record</button>
+        </section>
+
+        <!-- Inspector Information Section -->
+        <section id="inspector-info">
+            <h2>Inspector Information</h2>
+            <div id="inspectorFields">
+                <div class="inspector-row">
+                    <label for="inspector_name">First and Last Name:</label>
+                    <input type="text" name="inspector_name[]" placeholder="Enter inspector name">
+
+                    <label for="inspector_contact_number">Contact Number:</label>
+                    <input type="text" name="inspector_contact_number[]" placeholder="Enter inspector contact number">
+
+                    <label for="inspector_email">Email:</label>
+                    <input type="email" name="inspector_email[]" placeholder="Enter inspector email">
+                    <button type="button" class="remove-button" onclick="removeRow(this)">Remove</button>
+                </div>
+            </div>
+            <button type="button" onclick="addRow('inspectorFields')">Add Inspector</button>
+        </section>
+
+        <!-- Market Prices Section -->
+        <section id="market-price-info">
+            <h2>Market Prices</h2>
+            <div id="marketPriceFields">
+                <div class="market-price-row">
+                    <label for="market_price_date">Date:</label>
+                    <input type="date" name="market_price_date[]">
+
+                    <label for="market_name">Market Name:</label>
+                    <input type="text" name="market_name[]" placeholder="Enter market name">
+
+                    <label for="price_per_unit">Price per Unit:</label>
+                    <input type="text" name="price_per_unit[]" placeholder="Enter price per unit">
+                    <button type="button" class="remove-button" onclick="removeRow(this)">Remove</button>
+                </div>
+            </div>
+            <button type="button" onclick="addRow('marketPriceFields')">Add Market Price Record</button>
+        </section>
+
+        <!-- Submit Button -->
+        <input type="submit" id="submit" value="Submit">
+
+        <script>
+            function addRow(containerId) {
+                var container = document.getElementById(containerId);
+                var newRow = document.createElement('div');
+                newRow.className = containerId.slice(0, -6) + '-row'; // Adjust the class name based on the containerId
+
+                var labels = getLabels(containerId);
+
+                for (var i = 0; i < labels.length; i++) {
+                    var label = document.createElement('label');
+                    label.textContent = labels[i] + ':';
+
+                    var input = document.createElement('input');
+                    input.type = (labels[i].toLowerCase().includes('date')) ? 'date' : 'text';
+                    input.name = containerId.slice(0, -6) + '[]'; // Use the same name for each input field in a row
+                    input.placeholder = 'Enter ' + labels[i].toLowerCase();
+
+                    newRow.appendChild(label);
+                    newRow.appendChild(input);
+                }
+
+                var removeButton = document.createElement('button');
+                removeButton.type = 'button';
+                removeButton.className = 'remove-button';
+                removeButton.textContent = 'Remove';
+                removeButton.onclick = function () {
+                    removeRow(newRow);
+                };
+
+                newRow.appendChild(removeButton);
+                container.appendChild(newRow);
+            }
+
+            function removeRow(row) {
+                row.parentNode.removeChild(row);
+            }
+
+            function getLabels(containerId) {
+                switch (containerId) {
+                    case 'farmerFields':
+                        return ['Name', 'Contact Info', 'Location', 'Email'];
+                    case 'cropFields':
+                        return ['Crop Name', 'Crop Type', 'Soil Requirement', 'Ideal Temperature', 'Ideal Humidity'];
+                    case 'fieldFields':
+                        return ['Field Size', 'Soil Condition', 'Field Name', 'Planting Date'];
+                    case 'harvestFields':
+                        return ['Harvest Date', 'Quantity Harvested'];
+                    case 'pesticidesFields':
+                        return ['Pesticide Name', 'Application Date', 'Quantity Used'];
+                    case 'irrigationFields':
+                        return ['Date of Irrigation', 'Type', 'Duration'];
+                    case 'diseaseFields':
+                        return ['Disease Name', 'Detection Date', 'Treatment Applied', 'Treatment Date'];
+                    case 'soilTestFields':
+                        return ['Test Date', 'Soil pH', 'Nutrient Levels', 'Recommended Fertilizers'];
+                    case 'qualityFields':
+                        return ['Sample Date', 'Quality Rating', 'Weather Conditions'];
+                    case 'inspectorFields':
+                        return ['First and Last Name', 'Contact Number', 'Email'];
+                    case 'marketPriceFields':
+                        return ['Date', 'Market Name', 'Price per Unit'];
+                    default:
+                        return [];
+                }
+            }
+        </script>
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Crops and Fruits</title>
+    <!-- Add your styles or link to a separate stylesheet if needed -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url('background_image.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .division {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            position: relative;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .item {
+            cursor: pointer;
+        }
+
+        .item img {
+            width: 100%;
+            max-width: 200px; /* Set a maximum width for consistency */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .item img:hover + .hover-message {
+            opacity: 1;
+        }
+
+        .hover-message {
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+
+     
+     
+
+    <!-- Division for Indian Crops -->
+    <div class="division">
+        <h2>Crops</h2>
+        <!-- Crop Information Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Photo</th>
+                    <th>Current Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Crops -->
+                <tr class="item" onclick="redirectToPage('GraphRice.html')">
+                    <td>Rice</td>
+                    <td><img src="Rice.jpeg" alt="Rice"><div class="hover-message">Click to know the past prices</div></td>
+                    <td>$1.00 per kg</td>
+                    <script>
+                        function redirectToPage(GraphRice) {
+                            window.location.href = GraphRice.html;
+                        }
+                    </script>
+                </tr>
+                <tr class="item" onclick="redirectToPage('GraphWheat.html')">
+                    <td>Wheat</td>
+                    <td><img src="Wheat.jpeg" alt="Wheat"><div class="hover-message">Click to know the past prices</div></td>
+                    <td>$1.50 per kg</td>
+                    <script>
+                        function redirectToPage(GraphRice) {
+                            window.location.href = pageUrlGraphRice;
+                        }
+                    </script>
+                </tr>
+                <tr class="item" onclick="redirectToPage('GraphSugarcane.html')">
+                    <td>Sugarcane</td>
+                    <td><img src="Sugarcane.jpeg" alt="Sugarcane"><div class="hover-message">Click to know the past prices</div></td>
+                    <td>$0.50 per kg</td>
+                    <script>
+                        function redirectToPage(GraphSugarcane) {
+                            window.location.href = GraphSugarcane;
+                        }
+                    </script>
+                </tr>
+                <tr class="item" onclick="redirectToPage('GraphMustard.html')">
+                    <td>Mustard</td>
+                    <td><img src="mustard.jpeg" alt="Mustard"><div class="hover-message">Click to know the past prices</div></td>
+                    <td>$2.00 per kg</td>
+                    <script>
+                        function redirectToPage(GraphMustard) {
+                            window.location.href = GraphMustard;
+                        }
+                    </script>
+                </tr>
+                <tr class="item" onclick="redirectToPage('GraphTea.html')">
+                    <td>Tea</td>
+                    <td><img src="Tea.jpeg" alt="Tea"><div class="hover-message">Click to know the past prices</div></td>
+                    <td>$5.00 per kg</td>
+                    <script>
+                        function redirectToPage(GraphTea) {
+                            window.location.href = GraphTea;
+                        }
+                    </script>
+                </tr>
+                <!-- Add more crop rows as needed -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Division for Indian Fruits -->
+    <div class="division">
+        <h2>Fruits</h2>
+        <!-- Fruit Information Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Photo</th>
+                    <th>Current Price</th>
+                     
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Fruits -->
+                <tr class="item" onclick="redirectToPage('GraphApple.html')">
+                    <td>Apples</td>
+                    <td><img src="Apple.jpeg" alt="Apples"><div class="hover-message">Click to know the past prices</div></td>
+                    <td>$2.00 per kg</td>
+                    <script>
+                        function redirectToPage(GraphApple) {
+                            window.location.href = GraphApple;
+                        }
+                    </script>
+                </tr>
+                <tr class="item" onclick="redirectToPage(' GraphOranges.html')">
+                    <td>Oranges</td>
+                    <td><img src="Oranges.jpeg" alt="Oranges"><div class="hover-message">Click to know the past prices</div></td>
+                    <td>$1.50 per dozen</td>
+                    <script>
+                        function redirectToPage(GraphOranges) {
+                            window.location.href = GraphOranges;
+                        }
+                    </script>
+                </tr>
+                <tr class="item" onclick="redirectToPage('GraphBanana.html')">
+                    <td>Banana</td>
+                    <td><img src="Banana.jpeg" alt="Banana"><div class="hover-message">Click to know the past prices</div></td>
+                    <td>$1.20 per dozen</td>
+                    <script>
+                        function redirectToPage(GraphBanana) {
+                            window.location.href = GraphBanana;
+                        }
+                    </script>
+                </tr>
+                <tr class="item" onclick="redirectToPage('GraphMangoes.html')">
+                    <td>Mangoes</td>
+                    <td><img src="Mangoes.jpg" alt="Mangoes"><div class="hover-message">Click to know the past prices</div></td>
+                    <td>$2.50 per kg</td>
+                    <script>
+                        function redirectToPage(GraphMangoes) {
+                            window.location.href = GraphMangoes;
+                        }
+                    </script>
+                </tr>
+                <tr class="item" onclick="redirectToPage('GraphGrapes.html')">
+                    <td>Grapes</td>
+                    <td><img src="Grapes.jpeg" alt="Grapes"><div class="hover-message">Click to know the past prices</div></td>
+                    <td>$3.50 per Kg</td>
+                    <script>
+                        function redirectToPage(GraphGrapes) {
+                            window.location.href = GraphGrapes;
+                        }
+                    </script>
+                </tr>
+                <!-- Add more fruit rows as needed -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- JavaScript for redirection on click -->
+     
+</body>
+</html>

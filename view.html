@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Information</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #008080;
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+            margin: 0;
+            transition: background-color 0.5s;
+        }
+
+        section {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 12px;
+        }
+
+        th {
+            background-color: #008080;
+            color: #ffffff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            color: #008080;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #004040;
+        }
+
+        @media (max-width: 600px) {
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+
+    <h1>Farmer Information</h1>
+
+    <section id="farmer-info">
+        <h2>Farmer Details</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Contact Info</th>
+                <th>Location</th>
+                <th>Email</th>
+            </tr>
+            <tr>
+                <td>Farmer_name</td>
+                <td>contact_info</td>
+                <td>Location</td>
+                <td>E-mail</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="crop-info">
+        <h2>Crops Information</h2>
+        <table>
+            <tr>
+                <th>Crop Name</th>
+                <th>Crop Type</th>
+                <th>Soil Requirement</th>
+                <th>Ideal Temperature</th>
+                <th>Ideal Humidity</th>
+            </tr>
+            <!-- Repeat the following block for each crop -->
+            <tr>
+                <td>crop_name</td>
+                <td>Crop_type</td>
+                <td>Soil requirement</td>
+                <td>ideal temperature</td>
+                <td>ideal humidity</td>
+            </tr>
+            <!-- Repeat block ends -->
+        </table>
+    </section>
+
+    <section id="field-info">
+        <h2>Field Information</h2>
+        <table>
+            <tr>
+                <th>Field Size</th>
+                <th>Soil Condition</th>
+                <th>Field Name</th>
+                <th>Planting Date</th>
+            </tr>
+            <!-- Repeat the following block for each field -->
+            <tr>
+                <td>field size</td>
+                <td>soil condition</td>
+                <td>field name</td>
+                <td>planting date</td>
+            </tr>
+            <!-- Repeat block ends -->
+        </table>
+    </section>
+
+    <section id="harvest-info">
+        <h2>Harvest Records</h2>
+        <table>
+            <tr>
+                <th>Harvest Date</th>
+                <th>Quantity Harvested</th>
+            </tr>
+            <!-- Repeat the following block for each harvest record -->
+            <tr>
+                <td>harvest date</td>
+                <td>quantity harvested</td>
+            </tr>
+            <!-- Repeat block ends -->
+        </table>
+    </section>
+
+    <section id="pesticides-info">
+        <h2>Pesticides Applied</h2>
+        <table>
+            <tr>
+                <th>Pesticide Name</th>
+                <th>Application Date</th>
+                <th>Quantity Used</th>
+            </tr>
+            <!-- Repeat the following block for each pesticide application -->
+            <tr>
+                <td>pesticide name</td>
+                <td>application date</td>
+                <td>quantity used</td>
+            </tr>
+            <!-- Repeat block ends -->
+        </table>
+    </section>
+
+    <section id="irrigation-info">
+        <h2>Irrigation</h2>
+        <table>
+            <tr>
+                <th>Date of Irrigation</th>
+                <th>Type</th>
+                <th>Duration</th>
+            </tr>
+            <!-- Repeat the following block for each irrigation record -->
+            <tr>
+                <td>irrigation date</td>
+                <td>irrigation type</td>
+                <td>irrigation duration</td>
+            </tr>
+            <!-- Repeat block ends -->
+        </table>
+    </section>
+
+    <section id="disease-info">
+        <h2>Crop Diseases</h2>
+        <table>
+            <tr>
+                <th>Disease Name</th>
+                <th>Detection Date</th>
+                <th>Treatment Applied</th>
+                <th>Treatment Date</th>
+            </tr>
+            <!-- Repeat the following block for each disease record -->
+            <tr>
+                <td>disease name</td>
+                <td>detection date</td>
+                <td>treatment applied</td>
+                <td>treatment date</td>
+            </tr>
+            <!-- Repeat block ends -->
+        </table>
+    </section>
+
+    <section id="soil-test-info">
+        <h2>Soil Test</h2>
+        <table>
+            <tr>
+                <th>Test Date</th>
+                <th>Soil pH</th>
+                <th>Nutrient Levels</th>
+                <th>Recommended Fertilizers</th>
+            </tr>
+            <!-- Repeat the following block for each soil test record -->
+            <tr>
+                <td>test date</td>
+                <td>soil pH</td>
+                <td>nutrient levels</td>
+                <td>recommended fertilizers</td>
+            </tr>
+            <!-- Repeat block ends -->
+        </table>
+    </section>
+
+    <section id="quality-info">
+        <h2>Crop Quality</h2>
+        <table>
+            <tr>
+                <th>Sample Date</th>
+                <th>Quality Rating</th>
+                <th>Weather Conditions</th>
+            </tr>
+            <!-- Repeat the following block for each quality record -->
+            <tr>
+                <td>sample date</td>
+                <td>quality rating</td>
+                <td>weather conditions</td>
+            </tr>
+            <!-- Repeat block ends -->
+        </table>
+    </section>
+
+    <section id="inspector-info">
+        <h2>Inspector Information</h2>
+        <table>
+            <tr>
+                <th>First and Last Name</th>
+                <th>Contact Number</th>
+                <th>Email</th>
+            </tr>
+            <!-- Repeat the following block for each inspector -->
+            <tr>
+                <td>inspector name</td>
+                <td>inspector contact number</td>
+                <td>inspector email</td>
+            </tr>
+            <!-- Repeat block ends -->
+        </table>
+    </section>
+
+    <section id="market-price-info">
+        <h2>Market Prices</h2>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Market Name</th>
+                <th>Price per Unit</th>
+            </tr>
+            <!-- Repeat the following block for each market price record -->
+            <tr>
+                <td>market price date</td>
+                <td>market name</td>
+                <td>price per unit</td>
+            </tr>
+            <!-- Repeat block ends -->
+        </table>
+    </section>
+
+</body>
+</html>

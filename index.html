@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agronomix Symphony - Precision Farming Database</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            transition: background-color 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color:rgb(180, 198, 14);
+            color: black;
+            text-align: center;
+            padding: 2em;
+            transition: background-color 0.5s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Verdana', sans-serif; /* Change the font family here */
+            
+        }
+        .logo{
+            width:150px ;
+            height:150px;
+            mix-blend-mode: multiply;
+            border: 4px solid black;
+            border-top-right-radius: 60px;
+            border-bottom-left-radius: 60px;
+            margin-left: 100px;
+        }
+        .agro{
+            margin-right: 100px;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        
+        
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 1em;
+            transition: transform 0.3s ease;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #4CAF50;
+            color: #fff;
+            transition: background-color 0.5s ease;
+            margin-top: auto;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 60vh;
+            object-fit: cover;
+            border-radius: 0px;
+            transition: transform 0.5s ease;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2em;
+        }
+
+        .feature-section {
+            margin-top: 2em;
+            
+        }
+
+        .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1em;
+            margin-top: 1em;
+            transition: transform 0.3s ease;
+        }
+
+        .feature img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1em;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover,
+        li:hover {
+            transform: scale(1.05);
+        }
+        .nav{
+            background-color:darkgray;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 25px;
+            padding-right: 25px;
+            
+        }
+        .home1{
+            border: 2px solid transparent;
+            position: relative;
+            transition: border 0.3s ease;
+
+        }
+        .home1:hover{
+            border: 2px solid white;
+        }
+        .home{
+            margin-right: 80%;
+        }
+
+        .nav  a{
+            color: white;
+        }
+        .agro h1{
+            text-shadow: 5px 4px white;
+        }
+       
+         
+        
+        
+
+    </style>
+    
+    </head>
+<body>
+
+    <header>
+        <img src="logo.png" class="logo" alt="Agronomix Symphony Logo">
+        <div class="agro">
+            <h1 style="font-size: 50px;" >Agronomix Symphony</h1>
+            <p style="font-size: 22px;">Your Precision Farming Database Solution</p>
+        </div>
+        
+    </header>
+    <div class="nav">
+        <div class="home home1"><a href="#">Home</a></div>
+        <div class="login home1"><a href="login.php">Login</a></div>
+        <div class="Register home1"><a href="reg.php">Register</a></div>
+
+    </div>
+
+    <main>
+
+        <img class="hero-image" src="R.jpeg" alt="Farm Image">
+
+        <section class="flex-container">
+            <h2>Transforming Agriculture with Data-Driven Precision</h2>
+            <p>Welcome to Agronomix Symphony, where cutting-edge technology meets agriculture. Our precision farming database empowers farmers with insightful data, revolutionizing the way farms are managed and crops are cultivated.</p>
+        </section>
+
+        <section class="feature-section">
+            <h2>Key Features</h2>
+            <div class="feature">
+                <img src="FarmIcon.png" alt="FarmIcon">
+                <div>
+                    <h3>Farmers Management</h3>
+                    <p>Effortlessly organize farmer information, including contact details, location, and crop preferences. Agronomix Symphony streamlines the process of accessing vital farmer data for informed decision-making.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <img src="CropIcon.jpeg" alt="Crop Icon">
+                <div>
+                    <h3>Crop Insights</h3>
+                    <p>Gain a deep understanding of crops with detailed insights into ideal temperature, humidity, soil conditions, and more. Enhance crop management with data-driven recommendations.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <img src="HarvestIcon.webp" alt="Harvest Icon">
+                <div>
+                    <h3>Precise Harvest Records</h3>
+                    <p>Record and analyze harvest data with precision. Track quantities, dates, and crop health to optimize future harvests and improve overall farm productivity.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex-container">
+            <h2>Experience the Symphony of Precision Farming</h2>
+            <p>Explore the potential of Agronomix Symphony, where the fusion of technology and agriculture creates a symphony of precision farming. Our user-friendly interface and powerful analytics empower you to make informed decisions for sustainable and efficient farming practices.</p>
+        </section>
+
+        <section class="flex-container">
+            <h2>Get Started Today</h2>
+            <p>Embark on a journey towards smarter, data-driven agriculture. Join us in revolutionizing the way you manage your farm and cultivate success in every harvest.</p>
+            <ul>
+                <li><a href="GetStarted.html">Get Started</a></li>
+                <li><a href="LearnMore.html">Learn More</a></li>
+                <li> <a href="mailto:ravitejkakhandaki@gmail.com?subject=Contact%20Us&body=Hello%20User," class="contact-link">
+                    Contact Us</a></li>
+                 
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        &copy; 2024 Agronomix Symphony. All rights reserved.
+    </footer>
+
+</body>
+</html>

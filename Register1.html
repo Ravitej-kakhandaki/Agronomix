@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #2c3e50, #4a6271);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .registration-container {
+            background: linear-gradient(to right, #2c3e50, #4a6271);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            color: #fff;
+            zoom: 1.2;
+            width:400px;
+        }
+
+        h2 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 30px;
+            text-shadow: 4px 3px black;
+
+        }
+
+        label {
+            display: block;
+            margin: 8px 0 5px;
+            color: #eee;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        button {
+            margin-top: 30px;
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+        label {
+            display: block;
+            margin: 8px 0 5px;
+            color: #eee;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        #phoneNumber{
+            margin-bottom: 0;
+        }
+
+    </style>
+       <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var phoneNumber = document.getElementById("phoneNumber").value;
+
+            if (name === "" || email === "" || password === "" || confirmPassword === "" || phoneNumber === "") {
+                alert("Please fill in all fields");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Password and Confirm Password do not match");
+                return false;
+            }
+
+            // Add additional validation logic for the phone number if needed
+
+            // Add your logic for successful registration (e.g., AJAX request, redirecting to another page)
+            alert("Registration successful!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <div class="registration-container">
+        <h2>SIGN UP</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" required>
+            <small>Enter a 10-digit phone number without spaces or dashes</small>
+
+            <button type="button" onclick="validateForm()">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>
