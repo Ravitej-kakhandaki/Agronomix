@@ -37,3 +37,6 @@ This platform bridges the gap between **traditional farming practices** and **mo
 - Move towards **digitized, smart agriculture**  
 
 ---
+<img width="1892" height="986" alt="Screenshot (69)" src="https://github.com/user-attachments/assets/8f807b51-ef97-4006-b3e0-81b77e69bbfe" />
+
+
